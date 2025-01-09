@@ -7,12 +7,17 @@
 class Camera {
     public:
 
+    // default constructor
     Camera();
 
-    glm::mat4 getView() const {
-        return glm::lookAt(eye, eye + viewDirection, upVector);
-    }
+    // setup
+    void setPerspective(float fov, float aspect, float near, float far);
 
+    // get matrices
+    glm::mat4 getView() const;
+    glm::mat4 getPerspective() const;
+
+    // camera motion
     void mouseLook(int mouseX, int mouseY);
     void moveForward(float speed);
     void moveBackward(float speed);
@@ -20,6 +25,8 @@ class Camera {
     void moveRight(float speed);
 
     private:
+        glm::mat4 perspectiveMatrix;
+
         glm::vec3 eye;   
         glm::vec3 viewDirection;
         glm::vec3 upVector;

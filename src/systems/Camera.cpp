@@ -18,6 +18,18 @@ Camera::Camera() {
     mouseSensitivity = 0.7f;
 }
 
+void Camera::setPerspective(float fov, float aspect, float near, float far) {
+    perspectiveMatrix = glm::perspective(fov, aspect, near, far);
+}
+
+glm::mat4 Camera::getView() const {
+    return glm::lookAt(eye, eye + viewDirection, upVector);
+}
+
+glm::mat4 Camera::getPerspective() const {
+    return perspectiveMatrix;
+}
+
 void Camera::mouseLook(int mouseX, int mouseY) {
     
     // convert to radians

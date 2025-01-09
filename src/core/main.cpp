@@ -28,9 +28,10 @@ struct App {
 };
 
 struct Transform {
-    glm::vec3 translation = glm::vec3(0.0f);
-    float scale = 1.0f;
-    float rotate = 0.0f;
+    // glm::vec3 translation = glm::vec3(0.0f);
+    // float scale = 1.0f;
+    // float rotate = 0.0f;
+    glm::mat4 modelMatrix = glm::mat4(1.0f);
 };
 
 struct Mesh3D {
@@ -137,47 +138,55 @@ void preDraw() {
     glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT); // clear colour and depth buffer
 }
 
-void meshUpdate(Mesh3D* mesh) {
+GLint findUniformLocation(GLuint pipeline, const GLchar* name) {
+    GLint uniformLocation = glGetUniformLocation(pipeline, name);
+    if (uniformLocation < 0) {
+        std::cerr << "Could not set " << name << " matrix, consider a mispelling." << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    return uniformLocation;
+}
+
+void meshTranslate(Mesh3D* mesh, float x, float y, float z) {
+    mesh->transform.modelMatrix = glm::translate(mesh->transform.modelMatrix, glm::vec3(x, y, z));
+}
+
+void meshRotate(Mesh3D* mesh, float radians, glm::vec3 normal) {
+    mesh->transform.modelMatrix = glm::rotate(mesh->transform.modelMatrix, radians, normal);
+}
+
+void meshScale(Mesh3D* mesh, float x, float y, float z) {
+    mesh->transform.modelMatrix = glm::scale(mesh->transform.modelMatrix, glm::vec3(x, y, z));
+}
+
+void meshScale(Mesh3D* mesh, float xyz) {
+    meshScale(mesh, xyz, xyz, xyz);
+}
+
+void meshDraw(Mesh3D* mesh) {
+    if (mesh == nullptr) {
+        return;
+    }
 
     // use our shader
     glUseProgram(mesh->pipeline);
 
-    mesh->transform.rotate -= 0.1f;
+    // NOTE: often, for optimisation, we combine the model and view matrices
 
     // translation matrix
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), mesh->transform.translation);
-    model = glm::rotate(model, glm::radians(mesh->transform.rotate), glm::vec3(0.0f, 1.0f, 0.0f));
-    model = glm::scale(model, glm::vec3(mesh->transform.scale));
-    GLint modelMatrixLocation = glGetUniformLocation(mesh->pipeline, "u_modelMatrix");
-    if (modelMatrixLocation < 0) {
-        std::cerr << "Could not set model matric, consider a mispelling." << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    glUniformMatrix4fv(modelMatrixLocation, 1, false, &model[0][0]);
+    GLint modelMatrixLocation = findUniformLocation(mesh->pipeline, "u_modelMatrix");
+    glUniformMatrix4fv(modelMatrixLocation, 1, false, &mesh->transform.modelMatrix[0][0]);
 
     // perspective matrix
-    glm::mat4 perspective = glm::perspective(glm::radians(90.0f), (float)app.WINDOW_WIDTH/(float)app.WINDOW_HEIGHT, 0.1f, 10.0f);
-    GLint perspectiveMatrixLocation = glGetUniformLocation(mesh->pipeline, "u_perspectiveMatrix");
-    if (perspectiveMatrixLocation < 0) {
-        std::cerr << "Could not set perspective matric, consider a mispelling." << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    glm::mat4 perspective = app.camera.getPerspective();
+    GLint perspectiveMatrixLocation = findUniformLocation(mesh->pipeline, "u_perspectiveMatrix");
     glUniformMatrix4fv(perspectiveMatrixLocation, 1, false, &perspective[0][0]);
 
     // view matrix
     glm::mat4 view = app.camera.getView();
-    GLint viewMatrixLocation = glGetUniformLocation(mesh->pipeline, "u_viewMatrix");
-    if (viewMatrixLocation < 0) {
-        std::cerr << "Could not set view matric, consider a mispelling." << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    GLint viewMatrixLocation = findUniformLocation(mesh->pipeline, "u_viewMatrix");
     glUniformMatrix4fv(viewMatrixLocation, 1, false, &view[0][0]);
-}
-
-void drawMesh(Mesh3D* mesh) {
-    if (mesh == nullptr) {
-        return;
-    }
 
     glBindVertexArray(mesh->VAO);
     glBindBuffer(GL_ARRAY_BUFFER, mesh->VBO);
@@ -206,9 +215,13 @@ void handleEvents() {
 
     // Retrieve keyboard state
     const Uint8 *keyboardState = SDL_GetKeyboardState(NULL);
+
+    // [ESC] exit program    
     if (keyboardState[SDL_SCANCODE_ESCAPE]) {
         app.running = false;
     }
+
+    // [WASD] camera movement
     if (keyboardState[SDL_SCANCODE_D]) {
         app.camera.moveRight(gameProperties.movementSpeed);
     }
@@ -221,6 +234,26 @@ void handleEvents() {
     if (keyboardState[SDL_SCANCODE_S]) {
         app.camera.moveBackward(gameProperties.movementSpeed);
     }
+
+    // [<-- / -->] rotate meshes
+    if (keyboardState[SDL_SCANCODE_LEFT]) {
+        meshRotate(&mesh1, 0.05f, glm::vec3(0.f, 1.f, 0.f));
+        meshRotate(&mesh2, 0.05f, glm::vec3(0.f, 1.f, 0.f));
+    }
+    if (keyboardState[SDL_SCANCODE_RIGHT]) {
+        meshRotate(&mesh1, -0.05f, glm::vec3(0.f, 1.f, 0.f));
+        meshRotate(&mesh2, -0.05f, glm::vec3(0.f, 1.f, 0.f));
+    }
+
+    // [ ^ / v] scale meshes
+    if (keyboardState[SDL_SCANCODE_UP]) {
+        meshScale(&mesh1, 1.01f);
+        meshScale(&mesh2, 1.01f);
+    }
+    if (keyboardState[SDL_SCANCODE_DOWN]) {
+        meshScale(&mesh1, 0.99f);
+        meshScale(&mesh2, 0.99f);
+    }
 }
 
 void mainLoop() {
@@ -231,11 +264,13 @@ void mainLoop() {
     while (app.running) {
 
         handleEvents();
+
+        // meshRotate(&mesh1, 0.05f, glm::vec3(0.0f, 1.0f, 0.0f));
+        // meshRotate(&mesh2, -0.05f, glm::vec3(0.0f, 1.0f, 0.0f));
+
         preDraw();
-        meshUpdate(&mesh1);
-        drawMesh(&mesh1);
-        meshUpdate(&mesh2);
-        drawMesh(&mesh2);
+        meshDraw(&mesh1);
+        meshDraw(&mesh2);
 
         SDL_GL_SwapWindow(app.window);
     }
@@ -250,16 +285,16 @@ void meshVertexSpec(Mesh3D* mesh) {
     const std::vector<GLfloat> vertices = {
         // x     y     z     r     g     b
         // front vertices
-        -0.2f, -0.2f, 0.0f, 1.0f, 0.0f, 0.0f, // Bottom-left vertex     0
-         0.2f, -0.2f, 0.0f, 0.0f, 1.0f, 0.0f, // Bottom-right vertex    1
-        -0.2f,  0.2f, 0.0f, 0.0f, 0.0f, 1.0f, // Top-left vertex        2
-         0.2f,  0.2f, 0.0f, 1.0f, 0.0f, 0.0f,  // Top-right vertex      3
+        -0.2f, -0.2f, 0.2f, 1.0f, 0.0f, 0.0f, // Bottom-left vertex     0
+         0.2f, -0.2f, 0.2f, 0.0f, 1.0f, 0.0f, // Bottom-right vertex    1
+        -0.2f,  0.2f, 0.2f, 0.0f, 0.0f, 1.0f, // Top-left vertex        2
+         0.2f,  0.2f, 0.2f, 1.0f, 0.0f, 0.0f,  // Top-right vertex      3
 
         // back vertices
-        -0.2f, -0.2f,-0.4f, 1.0f, 0.0f, 0.0f, // Bottom-left vertex     4
-         0.2f, -0.2f,-0.4f, 0.0f, 1.0f, 0.0f, // Bottom-right vertex    5
-        -0.2f,  0.2f,-0.4f, 0.0f, 0.0f, 1.0f, // Top-left vertex        6
-         0.2f,  0.2f,-0.4f, 1.0f, 0.0f, 0.0f  // Top-right vertex       7
+        -0.2f, -0.2f,-0.2f, 1.0f, 0.0f, 0.0f, // Bottom-left vertex     4
+         0.2f, -0.2f,-0.2f, 0.0f, 1.0f, 0.0f, // Bottom-right vertex    5
+        -0.2f,  0.2f,-0.2f, 0.0f, 0.0f, 1.0f, // Top-left vertex        6
+         0.2f,  0.2f,-0.2f, 1.0f, 0.0f, 0.0f  // Top-right vertex       7
     };
 
     const std::vector<GLuint> indices = {
@@ -389,10 +424,16 @@ int main() {
     // setup up the pipeline (shaders etc)
     createGraphicsPipeline();
 
-    // setup vertices/geometry
+    // setup the camera
+    app.camera.setPerspective(glm::radians(90.f), (float)app.WINDOW_WIDTH/(float)app.WINDOW_HEIGHT, 0.1f, 10.0f);
+
+    // create cubes
     meshVertexSpec(&mesh1);
     meshVertexSpec(&mesh2);
-    mesh2.transform.translation.x += 1.0f;
+
+    // translate meshes
+    meshTranslate(&mesh1, -0.5f, 0, -1);
+    meshTranslate(&mesh2, 0.5f, 0, -1);
 
     mainLoop();
     cleanup(&mesh1);
