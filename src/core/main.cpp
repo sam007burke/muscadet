@@ -129,6 +129,7 @@ void cleanup(Mesh3D* mesh) {
 
 void preDraw() {
     glEnable(GL_CULL_FACE);
+    glEnable(GL_DEPTH_TEST);
 
     // setup window + background
     glViewport(0, 0, app.WINDOW_WIDTH, app.WINDOW_HEIGHT);

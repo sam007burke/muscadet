@@ -141,7 +141,6 @@ Muscadet: CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o
 Muscadet: CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o
 Muscadet: CMakeFiles/Muscadet.dir/build.make
 Muscadet: /usr/lib/x86_64-linux-gnu/libSDL2.so
-Muscadet: /usr/local/lib/libglm.a
 Muscadet: /usr/lib/x86_64-linux-gnu/libGLX.so
 Muscadet: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Muscadet: CMakeFiles/Muscadet.dir/link.txt
