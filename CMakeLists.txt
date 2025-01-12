@@ -10,12 +10,13 @@ if (POLICY CMP0072)
 endif()
 
 # Include directories
-include_directories(include third_party)
+include_directories(third_party)
 
 # Source files
 # Gather source files excluding the GLM directory
 file(GLOB_RECURSE SOURCES 
     src/*.cpp 
+    src/*.hpp
     third_party/*.cpp
 )
 list(FILTER SOURCES EXCLUDE REGEX "third_party/glm.*")

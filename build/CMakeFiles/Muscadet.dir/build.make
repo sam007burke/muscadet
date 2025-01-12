@@ -69,24 +69,38 @@ include CMakeFiles/Muscadet.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Muscadet.dir/flags.make
 
-CMakeFiles/Muscadet.dir/src/core/main.cpp.o: CMakeFiles/Muscadet.dir/flags.make
-CMakeFiles/Muscadet.dir/src/core/main.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/core/main.cpp
-CMakeFiles/Muscadet.dir/src/core/main.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Muscadet.dir/src/core/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/core/main.cpp.o -MF CMakeFiles/Muscadet.dir/src/core/main.cpp.o.d -o CMakeFiles/Muscadet.dir/src/core/main.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/core/main.cpp
+CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/engines/RenderingEngine.cpp
+CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o -MF CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o.d -o CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/engines/RenderingEngine.cpp
 
-CMakeFiles/Muscadet.dir/src/core/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/core/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/core/main.cpp > CMakeFiles/Muscadet.dir/src/core/main.cpp.i
+CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/engines/RenderingEngine.cpp > CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.i
 
-CMakeFiles/Muscadet.dir/src/core/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/core/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/core/main.cpp -o CMakeFiles/Muscadet.dir/src/core/main.cpp.s
+CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/engines/RenderingEngine.cpp -o CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.s
+
+CMakeFiles/Muscadet.dir/src/main.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/main.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/main.cpp
+CMakeFiles/Muscadet.dir/src/main.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Muscadet.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/main.cpp.o -MF CMakeFiles/Muscadet.dir/src/main.cpp.o.d -o CMakeFiles/Muscadet.dir/src/main.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/main.cpp
+
+CMakeFiles/Muscadet.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/main.cpp > CMakeFiles/Muscadet.dir/src/main.cpp.i
+
+CMakeFiles/Muscadet.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/main.cpp -o CMakeFiles/Muscadet.dir/src/main.cpp.s
 
 CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o: CMakeFiles/Muscadet.dir/flags.make
 CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/Camera.cpp
 CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/Camera.cpp
 
 CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.i: cmake_force
@@ -97,24 +111,136 @@ CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/Camera.cpp -o CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.s
 
-CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o: CMakeFiles/Muscadet.dir/flags.make
-CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/utilities/loadShaderFromFile.cpp
-CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o -MF CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o.d -o CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/utilities/loadShaderFromFile.cpp
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentArray.cpp
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentArray.cpp
 
-CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/utilities/loadShaderFromFile.cpp > CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.i
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentArray.cpp > CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.i
 
-CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/utilities/loadShaderFromFile.cpp -o CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.s
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentArray.cpp -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.s
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentManager.cpp
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentManager.cpp
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentManager.cpp > CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.i
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ComponentManager.cpp -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.s
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ECS.cpp
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ECS.cpp
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ECS.cpp > CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.i
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/ECS.cpp -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.s
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/EntityManager.cpp
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/EntityManager.cpp
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/EntityManager.cpp > CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.i
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/EntityManager.cpp -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.s
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/SystemManager.cpp
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/SystemManager.cpp
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/SystemManager.cpp > CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.i
+
+CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/EntityComponentSystem/SystemManager.cpp -o CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.s
+
+CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/Scene.cpp
+CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/Scene.cpp
+
+CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/Scene.cpp > CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.i
+
+CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/Scene.cpp -o CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.s
+
+CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/systems/Shaders.cpp
+CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o -MF CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o.d -o CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/systems/Shaders.cpp
+
+CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/systems/Shaders.cpp > CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.i
+
+CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/systems/Shaders.cpp -o CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.s
+
+CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/utilities/Debug.cpp
+CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o -MF CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o.d -o CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/utilities/Debug.cpp
+
+CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/utilities/Debug.cpp > CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.i
+
+CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/utilities/Debug.cpp -o CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.s
+
+CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o: CMakeFiles/Muscadet.dir/flags.make
+CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o: /home/samuel/Documents/game-engine/Muscadet/src/utilities/Loader.cpp
+CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o -MF CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o.d -o CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o -c /home/samuel/Documents/game-engine/Muscadet/src/utilities/Loader.cpp
+
+CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samuel/Documents/game-engine/Muscadet/src/utilities/Loader.cpp > CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.i
+
+CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samuel/Documents/game-engine/Muscadet/src/utilities/Loader.cpp -o CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.s
 
 CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o: CMakeFiles/Muscadet.dir/flags.make
 CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o: /home/samuel/Documents/game-engine/Muscadet/third_party/glad/glad.c
 CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o: CMakeFiles/Muscadet.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o -MF CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o.d -o CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o -c /home/samuel/Documents/game-engine/Muscadet/third_party/glad/glad.c
 
 CMakeFiles/Muscadet.dir/third_party/glad/glad.c.i: cmake_force
@@ -127,24 +253,42 @@ CMakeFiles/Muscadet.dir/third_party/glad/glad.c.s: cmake_force
 
 # Object files for target Muscadet
 Muscadet_OBJECTS = \
-"CMakeFiles/Muscadet.dir/src/core/main.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/main.cpp.o" \
 "CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o" \
-"CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o" \
+"CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o" \
 "CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o"
 
 # External object files for target Muscadet
 Muscadet_EXTERNAL_OBJECTS =
 
-Muscadet: CMakeFiles/Muscadet.dir/src/core/main.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/main.cpp.o
 Muscadet: CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o
-Muscadet: CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o
+Muscadet: CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o
 Muscadet: CMakeFiles/Muscadet.dir/third_party/glad/glad.c.o
 Muscadet: CMakeFiles/Muscadet.dir/build.make
 Muscadet: /usr/lib/x86_64-linux-gnu/libSDL2.so
 Muscadet: /usr/lib/x86_64-linux-gnu/libGLX.so
 Muscadet: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 Muscadet: CMakeFiles/Muscadet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Muscadet"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/samuel/Documents/game-engine/Muscadet/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Muscadet"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Muscadet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

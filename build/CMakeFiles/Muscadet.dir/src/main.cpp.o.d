@@ -1,5 +1,5 @@
-CMakeFiles/Muscadet.dir/src/core/main.cpp.o: \
- /home/samuel/Documents/game-engine/Muscadet/src/core/main.cpp \
+CMakeFiles/Muscadet.dir/src/main.cpp.o: \
+ /home/samuel/Documents/game-engine/Muscadet/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h \
@@ -427,4 +427,10 @@ CMakeFiles/Muscadet.dir/src/core/main.cpp.o: \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /home/samuel/Documents/game-engine/Muscadet/include/systems/Camera.hpp
+ /home/samuel/Documents/game-engine/Muscadet/src/systems/Camera.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/utilities/Loader.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/components/Meshes.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/components/Transforms.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/utilities/Debug.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/utilities/../components/Meshes.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/systems/Shaders.hpp

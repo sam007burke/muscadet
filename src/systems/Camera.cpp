@@ -2,7 +2,7 @@
 
 #define GLM_ENABLE_EXPERIMENTAL
 
-#include "systems/Camera.hpp"
+#include "Camera.hpp"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtx/rotate_vector.hpp"
@@ -58,6 +58,12 @@ void Camera::moveLeft(float speed) {
 };
 void Camera::moveRight(float speed) {
     eye += glm::normalize(cross(viewDirection, upVector)) * speed;
+}
+void Camera::moveAscend(float speed) {
+    eye += upVector * speed;
+}
+void Camera::moveDescend(float speed) {
+    eye -= upVector * speed;
 };
 
 glm::vec3 eye; // position

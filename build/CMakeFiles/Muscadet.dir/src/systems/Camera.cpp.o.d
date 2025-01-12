@@ -148,7 +148,7 @@ CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.o: \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
- /home/samuel/Documents/game-engine/Muscadet/include/systems/Camera.hpp \
+ /home/samuel/Documents/game-engine/Muscadet/src/systems/Camera.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/12/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \

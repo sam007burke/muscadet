@@ -129,29 +129,53 @@ Muscadet/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/build
 .PHONY : Muscadet/fast
 
-src/core/main.o: src/core/main.cpp.o
-.PHONY : src/core/main.o
+src/engines/RenderingEngine.o: src/engines/RenderingEngine.cpp.o
+.PHONY : src/engines/RenderingEngine.o
 
 # target to build an object file
-src/core/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/core/main.cpp.o
-.PHONY : src/core/main.cpp.o
+src/engines/RenderingEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.o
+.PHONY : src/engines/RenderingEngine.cpp.o
 
-src/core/main.i: src/core/main.cpp.i
-.PHONY : src/core/main.i
+src/engines/RenderingEngine.i: src/engines/RenderingEngine.cpp.i
+.PHONY : src/engines/RenderingEngine.i
 
 # target to preprocess a source file
-src/core/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/core/main.cpp.i
-.PHONY : src/core/main.cpp.i
+src/engines/RenderingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.i
+.PHONY : src/engines/RenderingEngine.cpp.i
 
-src/core/main.s: src/core/main.cpp.s
-.PHONY : src/core/main.s
+src/engines/RenderingEngine.s: src/engines/RenderingEngine.cpp.s
+.PHONY : src/engines/RenderingEngine.s
 
 # target to generate assembly for a file
-src/core/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/core/main.cpp.s
-.PHONY : src/core/main.cpp.s
+src/engines/RenderingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/engines/RenderingEngine.cpp.s
+.PHONY : src/engines/RenderingEngine.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/systems/Camera.o: src/systems/Camera.cpp.o
 .PHONY : src/systems/Camera.o
@@ -177,29 +201,221 @@ src/systems/Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Camera.cpp.s
 .PHONY : src/systems/Camera.cpp.s
 
-src/utilities/loadShaderFromFile.o: src/utilities/loadShaderFromFile.cpp.o
-.PHONY : src/utilities/loadShaderFromFile.o
+src/systems/EntityComponentSystem/ComponentArray.o: src/systems/EntityComponentSystem/ComponentArray.cpp.o
+.PHONY : src/systems/EntityComponentSystem/ComponentArray.o
 
 # target to build an object file
-src/utilities/loadShaderFromFile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.o
-.PHONY : src/utilities/loadShaderFromFile.cpp.o
+src/systems/EntityComponentSystem/ComponentArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.o
+.PHONY : src/systems/EntityComponentSystem/ComponentArray.cpp.o
 
-src/utilities/loadShaderFromFile.i: src/utilities/loadShaderFromFile.cpp.i
-.PHONY : src/utilities/loadShaderFromFile.i
+src/systems/EntityComponentSystem/ComponentArray.i: src/systems/EntityComponentSystem/ComponentArray.cpp.i
+.PHONY : src/systems/EntityComponentSystem/ComponentArray.i
 
 # target to preprocess a source file
-src/utilities/loadShaderFromFile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.i
-.PHONY : src/utilities/loadShaderFromFile.cpp.i
+src/systems/EntityComponentSystem/ComponentArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.i
+.PHONY : src/systems/EntityComponentSystem/ComponentArray.cpp.i
 
-src/utilities/loadShaderFromFile.s: src/utilities/loadShaderFromFile.cpp.s
-.PHONY : src/utilities/loadShaderFromFile.s
+src/systems/EntityComponentSystem/ComponentArray.s: src/systems/EntityComponentSystem/ComponentArray.cpp.s
+.PHONY : src/systems/EntityComponentSystem/ComponentArray.s
 
 # target to generate assembly for a file
-src/utilities/loadShaderFromFile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/loadShaderFromFile.cpp.s
-.PHONY : src/utilities/loadShaderFromFile.cpp.s
+src/systems/EntityComponentSystem/ComponentArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentArray.cpp.s
+.PHONY : src/systems/EntityComponentSystem/ComponentArray.cpp.s
+
+src/systems/EntityComponentSystem/ComponentManager.o: src/systems/EntityComponentSystem/ComponentManager.cpp.o
+.PHONY : src/systems/EntityComponentSystem/ComponentManager.o
+
+# target to build an object file
+src/systems/EntityComponentSystem/ComponentManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.o
+.PHONY : src/systems/EntityComponentSystem/ComponentManager.cpp.o
+
+src/systems/EntityComponentSystem/ComponentManager.i: src/systems/EntityComponentSystem/ComponentManager.cpp.i
+.PHONY : src/systems/EntityComponentSystem/ComponentManager.i
+
+# target to preprocess a source file
+src/systems/EntityComponentSystem/ComponentManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.i
+.PHONY : src/systems/EntityComponentSystem/ComponentManager.cpp.i
+
+src/systems/EntityComponentSystem/ComponentManager.s: src/systems/EntityComponentSystem/ComponentManager.cpp.s
+.PHONY : src/systems/EntityComponentSystem/ComponentManager.s
+
+# target to generate assembly for a file
+src/systems/EntityComponentSystem/ComponentManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ComponentManager.cpp.s
+.PHONY : src/systems/EntityComponentSystem/ComponentManager.cpp.s
+
+src/systems/EntityComponentSystem/ECS.o: src/systems/EntityComponentSystem/ECS.cpp.o
+.PHONY : src/systems/EntityComponentSystem/ECS.o
+
+# target to build an object file
+src/systems/EntityComponentSystem/ECS.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.o
+.PHONY : src/systems/EntityComponentSystem/ECS.cpp.o
+
+src/systems/EntityComponentSystem/ECS.i: src/systems/EntityComponentSystem/ECS.cpp.i
+.PHONY : src/systems/EntityComponentSystem/ECS.i
+
+# target to preprocess a source file
+src/systems/EntityComponentSystem/ECS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.i
+.PHONY : src/systems/EntityComponentSystem/ECS.cpp.i
+
+src/systems/EntityComponentSystem/ECS.s: src/systems/EntityComponentSystem/ECS.cpp.s
+.PHONY : src/systems/EntityComponentSystem/ECS.s
+
+# target to generate assembly for a file
+src/systems/EntityComponentSystem/ECS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/ECS.cpp.s
+.PHONY : src/systems/EntityComponentSystem/ECS.cpp.s
+
+src/systems/EntityComponentSystem/EntityManager.o: src/systems/EntityComponentSystem/EntityManager.cpp.o
+.PHONY : src/systems/EntityComponentSystem/EntityManager.o
+
+# target to build an object file
+src/systems/EntityComponentSystem/EntityManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.o
+.PHONY : src/systems/EntityComponentSystem/EntityManager.cpp.o
+
+src/systems/EntityComponentSystem/EntityManager.i: src/systems/EntityComponentSystem/EntityManager.cpp.i
+.PHONY : src/systems/EntityComponentSystem/EntityManager.i
+
+# target to preprocess a source file
+src/systems/EntityComponentSystem/EntityManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.i
+.PHONY : src/systems/EntityComponentSystem/EntityManager.cpp.i
+
+src/systems/EntityComponentSystem/EntityManager.s: src/systems/EntityComponentSystem/EntityManager.cpp.s
+.PHONY : src/systems/EntityComponentSystem/EntityManager.s
+
+# target to generate assembly for a file
+src/systems/EntityComponentSystem/EntityManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/EntityManager.cpp.s
+.PHONY : src/systems/EntityComponentSystem/EntityManager.cpp.s
+
+src/systems/EntityComponentSystem/SystemManager.o: src/systems/EntityComponentSystem/SystemManager.cpp.o
+.PHONY : src/systems/EntityComponentSystem/SystemManager.o
+
+# target to build an object file
+src/systems/EntityComponentSystem/SystemManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.o
+.PHONY : src/systems/EntityComponentSystem/SystemManager.cpp.o
+
+src/systems/EntityComponentSystem/SystemManager.i: src/systems/EntityComponentSystem/SystemManager.cpp.i
+.PHONY : src/systems/EntityComponentSystem/SystemManager.i
+
+# target to preprocess a source file
+src/systems/EntityComponentSystem/SystemManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.i
+.PHONY : src/systems/EntityComponentSystem/SystemManager.cpp.i
+
+src/systems/EntityComponentSystem/SystemManager.s: src/systems/EntityComponentSystem/SystemManager.cpp.s
+.PHONY : src/systems/EntityComponentSystem/SystemManager.s
+
+# target to generate assembly for a file
+src/systems/EntityComponentSystem/SystemManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/EntityComponentSystem/SystemManager.cpp.s
+.PHONY : src/systems/EntityComponentSystem/SystemManager.cpp.s
+
+src/systems/Scene.o: src/systems/Scene.cpp.o
+.PHONY : src/systems/Scene.o
+
+# target to build an object file
+src/systems/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.o
+.PHONY : src/systems/Scene.cpp.o
+
+src/systems/Scene.i: src/systems/Scene.cpp.i
+.PHONY : src/systems/Scene.i
+
+# target to preprocess a source file
+src/systems/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.i
+.PHONY : src/systems/Scene.cpp.i
+
+src/systems/Scene.s: src/systems/Scene.cpp.s
+.PHONY : src/systems/Scene.s
+
+# target to generate assembly for a file
+src/systems/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Scene.cpp.s
+.PHONY : src/systems/Scene.cpp.s
+
+src/systems/Shaders.o: src/systems/Shaders.cpp.o
+.PHONY : src/systems/Shaders.o
+
+# target to build an object file
+src/systems/Shaders.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.o
+.PHONY : src/systems/Shaders.cpp.o
+
+src/systems/Shaders.i: src/systems/Shaders.cpp.i
+.PHONY : src/systems/Shaders.i
+
+# target to preprocess a source file
+src/systems/Shaders.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.i
+.PHONY : src/systems/Shaders.cpp.i
+
+src/systems/Shaders.s: src/systems/Shaders.cpp.s
+.PHONY : src/systems/Shaders.s
+
+# target to generate assembly for a file
+src/systems/Shaders.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/systems/Shaders.cpp.s
+.PHONY : src/systems/Shaders.cpp.s
+
+src/utilities/Debug.o: src/utilities/Debug.cpp.o
+.PHONY : src/utilities/Debug.o
+
+# target to build an object file
+src/utilities/Debug.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.o
+.PHONY : src/utilities/Debug.cpp.o
+
+src/utilities/Debug.i: src/utilities/Debug.cpp.i
+.PHONY : src/utilities/Debug.i
+
+# target to preprocess a source file
+src/utilities/Debug.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.i
+.PHONY : src/utilities/Debug.cpp.i
+
+src/utilities/Debug.s: src/utilities/Debug.cpp.s
+.PHONY : src/utilities/Debug.s
+
+# target to generate assembly for a file
+src/utilities/Debug.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/Debug.cpp.s
+.PHONY : src/utilities/Debug.cpp.s
+
+src/utilities/Loader.o: src/utilities/Loader.cpp.o
+.PHONY : src/utilities/Loader.o
+
+# target to build an object file
+src/utilities/Loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.o
+.PHONY : src/utilities/Loader.cpp.o
+
+src/utilities/Loader.i: src/utilities/Loader.cpp.i
+.PHONY : src/utilities/Loader.i
+
+# target to preprocess a source file
+src/utilities/Loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.i
+.PHONY : src/utilities/Loader.cpp.i
+
+src/utilities/Loader.s: src/utilities/Loader.cpp.s
+.PHONY : src/utilities/Loader.s
+
+# target to generate assembly for a file
+src/utilities/Loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Muscadet.dir/build.make CMakeFiles/Muscadet.dir/src/utilities/Loader.cpp.s
+.PHONY : src/utilities/Loader.cpp.s
 
 third_party/glad/glad.o: third_party/glad/glad.c.o
 .PHONY : third_party/glad/glad.o
@@ -234,15 +450,42 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Muscadet"
-	@echo "... src/core/main.o"
-	@echo "... src/core/main.i"
-	@echo "... src/core/main.s"
+	@echo "... src/engines/RenderingEngine.o"
+	@echo "... src/engines/RenderingEngine.i"
+	@echo "... src/engines/RenderingEngine.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/systems/Camera.o"
 	@echo "... src/systems/Camera.i"
 	@echo "... src/systems/Camera.s"
-	@echo "... src/utilities/loadShaderFromFile.o"
-	@echo "... src/utilities/loadShaderFromFile.i"
-	@echo "... src/utilities/loadShaderFromFile.s"
+	@echo "... src/systems/EntityComponentSystem/ComponentArray.o"
+	@echo "... src/systems/EntityComponentSystem/ComponentArray.i"
+	@echo "... src/systems/EntityComponentSystem/ComponentArray.s"
+	@echo "... src/systems/EntityComponentSystem/ComponentManager.o"
+	@echo "... src/systems/EntityComponentSystem/ComponentManager.i"
+	@echo "... src/systems/EntityComponentSystem/ComponentManager.s"
+	@echo "... src/systems/EntityComponentSystem/ECS.o"
+	@echo "... src/systems/EntityComponentSystem/ECS.i"
+	@echo "... src/systems/EntityComponentSystem/ECS.s"
+	@echo "... src/systems/EntityComponentSystem/EntityManager.o"
+	@echo "... src/systems/EntityComponentSystem/EntityManager.i"
+	@echo "... src/systems/EntityComponentSystem/EntityManager.s"
+	@echo "... src/systems/EntityComponentSystem/SystemManager.o"
+	@echo "... src/systems/EntityComponentSystem/SystemManager.i"
+	@echo "... src/systems/EntityComponentSystem/SystemManager.s"
+	@echo "... src/systems/Scene.o"
+	@echo "... src/systems/Scene.i"
+	@echo "... src/systems/Scene.s"
+	@echo "... src/systems/Shaders.o"
+	@echo "... src/systems/Shaders.i"
+	@echo "... src/systems/Shaders.s"
+	@echo "... src/utilities/Debug.o"
+	@echo "... src/utilities/Debug.i"
+	@echo "... src/utilities/Debug.s"
+	@echo "... src/utilities/Loader.o"
+	@echo "... src/utilities/Loader.i"
+	@echo "... src/utilities/Loader.s"
 	@echo "... third_party/glad/glad.o"
 	@echo "... third_party/glad/glad.i"
 	@echo "... third_party/glad/glad.s"

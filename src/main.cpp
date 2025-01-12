@@ -9,8 +9,10 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "systems/Camera.hpp"
-
-std::string loadShaderFromFile(const std::string& filepath);
+#include "utilities/Loader.hpp"
+#include "components/Meshes.hpp"
+#include "utilities/Debug.hpp"
+#include "systems/Shaders.hpp"
 
 struct App {
 
@@ -27,21 +29,6 @@ struct App {
     Camera camera;
 };
 
-struct Transform {
-    // glm::vec3 translation = glm::vec3(0.0f);
-    // float scale = 1.0f;
-    // float rotate = 0.0f;
-    glm::mat4 modelMatrix = glm::mat4(1.0f);
-};
-
-struct Mesh3D {
-    GLuint VAO;
-    GLuint VBO;
-    GLuint IBO;
-    GLuint pipeline = 0;
-    Transform transform;
-};
-
 struct GameProperties {
     float movementSpeed = 0.01f;
 };
@@ -50,25 +37,14 @@ struct GameProperties {
 App app;
 Mesh3D mesh1;
 Mesh3D mesh2;
+Mesh3D mesh3;
 GameProperties gameProperties;
 
-static void glClearErrors() {
-    while (glGetError() != GL_NO_ERROR) {}
-}
-
-static bool glCheckErrorStatus(const char* function, int line) {
-    while (GLenum error = glGetError()) {
-        std::cout << "OpenGL Error: " << error
-            << "\tLine: " << line
-            << "Function: " << function
-            << std::endl;
-        return true;
-    }
-    return false;
-}
-
-#define glCheck(x) glClearErrors(); x; glCheckErrorStatus(#x, __LINE__);
-
+/* ------------------------- INITIALIST THE PROGRAM ------------------------- */
+/**
+ * Creates SDL window, sets up the the OpenGL context and attaches to window.
+ * Initialises GLAD.
+ */
 int initialiseProgram() {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         std::cerr << "Failed to initialise SDL: " << SDL_GetError() << std::endl;
@@ -148,22 +124,6 @@ GLint findUniformLocation(GLuint pipeline, const GLchar* name) {
     return uniformLocation;
 }
 
-void meshTranslate(Mesh3D* mesh, float x, float y, float z) {
-    mesh->transform.modelMatrix = glm::translate(mesh->transform.modelMatrix, glm::vec3(x, y, z));
-}
-
-void meshRotate(Mesh3D* mesh, float radians, glm::vec3 normal) {
-    mesh->transform.modelMatrix = glm::rotate(mesh->transform.modelMatrix, radians, normal);
-}
-
-void meshScale(Mesh3D* mesh, float x, float y, float z) {
-    mesh->transform.modelMatrix = glm::scale(mesh->transform.modelMatrix, glm::vec3(x, y, z));
-}
-
-void meshScale(Mesh3D* mesh, float xyz) {
-    meshScale(mesh, xyz, xyz, xyz);
-}
-
 void meshDraw(Mesh3D* mesh) {
     if (mesh == nullptr) {
         return;
@@ -188,9 +148,28 @@ void meshDraw(Mesh3D* mesh) {
     GLint viewMatrixLocation = findUniformLocation(mesh->pipeline, "u_viewMatrix");
     glUniformMatrix4fv(viewMatrixLocation, 1, false, &view[0][0]);
 
+    // bind buffers
     glBindVertexArray(mesh->VAO);
     glBindBuffer(GL_ARRAY_BUFFER, mesh->VBO);
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->IBO);
+
+    // get the number of vertices to draw
+    GLint IBOsize = 0;
+    glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &IBOsize);
+    IBOsize /= sizeof(GLuint);
+
+    // std::cout << "IBO size for " << mesh->name << ": " << IBOsize << std::endl;
+
+    // GLuint* indices = static_cast<GLuint*>(glMapBuffer(GL_ELEMENT_ARRAY_BUFFER, GL_READ_ONLY));
+    // for (int i = 0; i < IBOsize; ++i) {
+    //     std::cout << "Index: " << indices[i] << std::endl;
+    // }
+    // glUnmapBuffer(GL_ELEMENT_ARRAY_BUFFER);
+
+
+    // draw!!
+    glDrawElements(GL_TRIANGLES, IBOsize, GL_UNSIGNED_INT, 0);
+    // glDrawElements(GL_TRIANGLES, 372, GL_UNSIGNED_INT, 0);
 }
 
 void handleEvents() {
@@ -234,26 +213,32 @@ void handleEvents() {
     if (keyboardState[SDL_SCANCODE_S]) {
         app.camera.moveBackward(gameProperties.movementSpeed);
     }
-
-    // [<-- / -->] rotate meshes
-    if (keyboardState[SDL_SCANCODE_LEFT]) {
-        meshRotate(&mesh1, 0.05f, glm::vec3(0.f, 1.f, 0.f));
-        meshRotate(&mesh2, 0.05f, glm::vec3(0.f, 1.f, 0.f));
+    if (keyboardState[SDL_SCANCODE_SPACE]) {
+        app.camera.moveAscend(gameProperties.movementSpeed);
     }
-    if (keyboardState[SDL_SCANCODE_RIGHT]) {
-        meshRotate(&mesh1, -0.05f, glm::vec3(0.f, 1.f, 0.f));
-        meshRotate(&mesh2, -0.05f, glm::vec3(0.f, 1.f, 0.f));
+    if (keyboardState[SDL_SCANCODE_LSHIFT]) {
+        app.camera.moveDescend(gameProperties.movementSpeed);
     }
 
-    // [ ^ / v] scale meshes
-    if (keyboardState[SDL_SCANCODE_UP]) {
-        meshScale(&mesh1, 1.01f);
-        meshScale(&mesh2, 1.01f);
-    }
-    if (keyboardState[SDL_SCANCODE_DOWN]) {
-        meshScale(&mesh1, 0.99f);
-        meshScale(&mesh2, 0.99f);
-    }
+    // // [<-- / -->] rotate meshes
+    // if (keyboardState[SDL_SCANCODE_LEFT]) {
+    //     meshRotate(&mesh1, 0.05f, glm::vec3(0.f, 1.f, 0.f));
+    //     meshRotate(&mesh2, 0.05f, glm::vec3(0.f, 1.f, 0.f));
+    // }
+    // if (keyboardState[SDL_SCANCODE_RIGHT]) {
+    //     meshRotate(&mesh1, -0.05f, glm::vec3(0.f, 1.f, 0.f));
+    //     meshRotate(&mesh2, -0.05f, glm::vec3(0.f, 1.f, 0.f));
+    // }
+
+    // // [ ^ / v] scale meshes
+    // if (keyboardState[SDL_SCANCODE_UP]) {
+    //     meshScale(&mesh1, 1.01f);
+    //     meshScale(&mesh2, 1.01f);
+    // }
+    // if (keyboardState[SDL_SCANCODE_DOWN]) {
+    //     meshScale(&mesh1, 0.99f);
+    //     meshScale(&mesh2, 0.99f);
+    // }
 }
 
 void mainLoop() {
@@ -271,6 +256,7 @@ void mainLoop() {
         preDraw();
         meshDraw(&mesh1);
         meshDraw(&mesh2);
+        meshDraw(&mesh3);
 
         SDL_GL_SwapWindow(app.window);
     }
@@ -278,6 +264,7 @@ void mainLoop() {
 
 void meshVertexSpec(Mesh3D* mesh) {
 
+    mesh->name = "Gay Cube";
     mesh->pipeline = app.shaderProgram;
 
     // lives on CPU
@@ -355,61 +342,59 @@ void meshVertexSpec(Mesh3D* mesh) {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-GLuint compileShader(GLuint type, const char* source) {
-    GLuint shader;
+void meshFromObject(Mesh3D* mesh, const std::string& name) {
 
-    switch (type)
-    {
-    case GL_VERTEX_SHADER:
-    case GL_FRAGMENT_SHADER:
-        shader = glCreateShader(type);
-        break;
-    
-    default:
-        break;
-    }
+    std::cout << "Loading model: " << name << std::endl;
 
-    glShaderSource(shader, 1, &source, nullptr);
-    glCompileShader(shader);
+    mesh->name = name;
+    mesh->pipeline = app.shaderProgram;
 
-    // get status, log errors
-    int success;
-    char infoLog[512];
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        glGetShaderInfoLog(shader, 512, nullptr, infoLog);
-        std::cerr << "Failed to compile " << type << " shader: " << infoLog << std::endl;
-    }
+    // load the faces from the file
+    std::vector< glm::vec3 > vertices;
+    std::vector< GLuint > indices;
+    loadObj(name, vertices, indices);
+    // debugModel(vertices, indices);
 
-    return shader;
-}
+    std::cout << "\tFound " << vertices.size() << " vertices" << std::endl;
+    std::cout << "\tFound " << indices.size() / 3 << " faces" << std::endl;
 
-GLuint createShaderProgram(const char* vertexShaderSource, const char* fragmentShaderSource) {
-    GLuint shaderProgram = glCreateProgram();
+    // Create VAO and VBO
+    // VAO: Vertex Array Object (spec for the VBO)
+    // VBO: Vertex Buffer Object (where the data is)
+    glGenVertexArrays(1, &mesh->VAO);
+    glGenBuffers(1, &mesh->VBO);
 
-    // compile shaders
-    GLuint vertexShader = compileShader(GL_VERTEX_SHADER, vertexShaderSource);
-    GLuint fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShaderSource);
+    // bind the VAO and VBO
+    // binding: telling OpenGL what VAO/VBO we are using
+    glBindVertexArray(mesh->VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, mesh->VBO);
 
-    // attach shaders to program
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
+    // populate the VBO with our vertices
+    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), vertices.data(), GL_STATIC_DRAW);
 
-    // Validate program
-    glValidateProgram(shaderProgram);
+    // create IBO (Index Buffer Object)
+    glGenBuffers(1, &mesh->IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh->IBO);
+
+    // populate IBO
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLuint), indices.data(), GL_STATIC_DRAW);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, false, sizeof(glm::vec3), (GLvoid*)0); // 3 -> "3 components: x, y, z"
+    // glVertexAttribPointer(1, 3, GL_FLOAT, false, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat))); // 3 -> "3 components: r, g, b"
+    glEnableVertexAttribArray(0);
+    // glEnableVertexAttribArray(1);
 
     // cleanup
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-
-    return shaderProgram;
+    glBindVertexArray(0);
+    glDisableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
+
 
 void createGraphicsPipeline() {
     // load shaders
-    const std::string vertexShaderSource = loadShaderFromFile("res/shaders/vertex.glsl");
-    const std::string fragmentShaderSource = loadShaderFromFile("res/shaders/fragment.glsl");
+    const std::string vertexShaderSource = loadShader("res/shaders/vertex.glsl");
+    const std::string fragmentShaderSource = loadShader("res/shaders/fragment.glsl");
 
     app.shaderProgram = createShaderProgram(vertexShaderSource.c_str(), fragmentShaderSource.c_str());
 }
@@ -431,13 +416,24 @@ int main() {
     meshVertexSpec(&mesh1);
     meshVertexSpec(&mesh2);
 
+    // load  models
+    meshFromObject(&mesh3, "blender_torus");
+
     // translate meshes
-    meshTranslate(&mesh1, -0.5f, 0, -1);
-    meshTranslate(&mesh2, 0.5f, 0, -1);
+    // meshTranslate(&mesh1, -0.5f, 0, -1);
+    // meshTranslate(&mesh2, 0.5f, 0, -1);
+    // meshTranslate(&mesh3, 1.5f, 0, -1.5f);
+    // meshScale(&mesh3, 0.5);
+
+    // debug mesh / show properties
+    debugMesh(&mesh1);
+    debugMesh(&mesh2);
+    debugMesh(&mesh3);
 
     mainLoop();
     cleanup(&mesh1);
     cleanup(&mesh2);
+    cleanup(&mesh3);
 
     return 0;
 }
